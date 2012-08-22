@@ -82,14 +82,14 @@ class SoftwaresController < ApplicationController
   def list_ood
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @server }
+      format.json { render :json => @software }
     end
   end
 
   def list_utd
     respond_to do |format|
       format.html
-      format.json { render :json => @server }
+      format.json { render :json => @software }
     end
   end
 
