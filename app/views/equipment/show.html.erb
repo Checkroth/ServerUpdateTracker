@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @equipment.name %>
+</p>
+
+<p>
+  <b>Serial:</b>
+  <%= @equipment.serial %>
+</p>
+
+<p>
+  <b>Iosv:</b>
+  <%= @equipment.iosv %>
+</p>
+
+<p>
+  <b>Iosi:</b>
+  <%= @equipment.iosi %>
+</p>
+
+<p>
+  <b>Ipseg:</b>
+  <%= @equipment.ipseg %>
+</p>
+
+<p>
+  <b>Gwaddr:</b>
+  <%= @equipment.gwaddr %>
+</p>
+
+<p>
+  <b>Wanip:</b>
+  <%= @equipment.wanip %>
+</p>
+
+<p>
+  <b>Mgmtip:</b>
+  <%= @equipment.mgmtip %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @equipment.notes %>
+</p>
+
+<p>
+  <b>Iosu:</b>
+  <%= @equipment.iosu %>
+</p>
+
+
+<%= link_to 'Edit', edit_equipment_path(@equipment) %> |
+<%= link_to 'Back', equipment_index_path %>

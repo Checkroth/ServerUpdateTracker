@@ -1,0 +1,39 @@
+<h1>Listing servers</h1>
+<p>
+<%= form_tag servers_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<%end%>
+<%= button_to "Show All", servers_path, :method => 'get' %>
+<%= button_to "Only up to date", servers_path, :method => 'get' %>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Os</th>
+    <th>Phys</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% for server in @servers %>
+  <% softwares = server.softwares.where("status = Up to date") %>
+  <% if not softwares.empty? %>
+  <tr>
+    <td><%= server.name %></td>
+    <td><%= server.os %></td>
+    <td><%= server.phys %></td>
+    <td><%= link_to 'Show', server %></td>
+    <td><%= link_to 'Edit', edit_server_path(server) %></td>
+    <td><%= link_to 'Destroy', server, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <%end%>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Server', new_server_path %>
+<%= link_to 'Home', root_path %>

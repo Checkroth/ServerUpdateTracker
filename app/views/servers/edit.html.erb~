@@ -1,0 +1,7 @@
+<h1>Editing server</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @server %> |
+<%= link_to 'Back', servers_path %>
+<%= link_to 'Home', index_path %>

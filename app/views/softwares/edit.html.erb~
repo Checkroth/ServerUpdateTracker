@@ -1,0 +1,26 @@
+<h1>Editing Software</h1>
+
+<%= form_for ([:server, @software]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %> <br />
+    <%= f.radio_button :status, "Out of date" %> 
+    <%= f.label :status, "Out of date", :value => "Out of date" %>
+    <%= f.radio_button :status, "Up to date" %>
+    <%= f.label :status, "Up to date", :value => "Up to date" %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit 'Update Software', :class => 'save-button' %>
+  </div>
+<% end %>
+
+<%= link_to 'back', @server %>

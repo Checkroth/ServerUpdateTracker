@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+.clear {
+clear:both;
+height:0;
+width:0;
+padding:0;
+margin:0;
+}
+
+.header {
+width:800px;
+height:25px;
+text-align:center;
+margin:auto;
+background-color:#FFCA3D;
+padding:3px;
+}
+
+.container {
+width:800px;
+min-height:510px;
+text-align:center;
+padding:30px 0;
+margin:0px auto 30px;
+background-color:#FFFFFF;
+border:1px solid black;
+}
+
+.table-head{
+font-weight:bold;
+color:#0092B2;
+letter-spacing:2px;
+font-size:large;
+margin:0 auto;
+}
+
+.cell {
+text-align:left;
+float:left;
+}
+
+.field{
+font-size:large;
+padding:2px 0 15px;
+color:#0092B2;
+}
+
+.radio{
+font-size:medium;
+color:black;
+}
+
+.sort-button{
+width:103px;
+color:#0092B2;
+margin:0 15px;
+height:25px;
+float:left;
+white-space:nowrap;
+}
+
+.save-button{
+width:255px;
+color:#0092B2;
+margin:0 auto;
+height:25px;
+}

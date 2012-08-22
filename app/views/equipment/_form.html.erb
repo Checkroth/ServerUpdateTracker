@@ -1,0 +1,57 @@
+<%= form_for(@equipment) do |f| %>
+  <% if @equipment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@equipment.errors.count, "error") %> prohibited this equipment from being saved:</h2>
+
+      <ul>
+      <% @equipment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </div>
+  <div class="field">
+    <%= f.label :iosv %><br />
+    <%= f.text_field :iosv %>
+  </div>
+  <div class="field">
+    <%= f.label :iosi %><br />
+    <%= f.text_field :iosi %>
+  </div>
+  <div class="field">
+    <%= f.label :ipseg %><br />
+    <%= f.text_field :ipseg %>
+  </div>
+  <div class="field">
+    <%= f.label :gwaddr %><br />
+    <%= f.text_field :gwaddr %>
+  </div>
+  <div class="field">
+    <%= f.label :wanip %><br />
+    <%= f.text_field :wanip %>
+  </div>
+  <div class="field">
+    <%= f.label :mgmtip %><br />
+    <%= f.text_field :mgmtip %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :iosu %><br />
+    <%= f.text_field :iosu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

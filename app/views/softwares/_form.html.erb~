@@ -1,0 +1,19 @@
+<%= form_for ([@server, @software]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :status, "Out of date" %> 
+    <%= f.label :status, "Out of date", :value => "Out of date", :class => 'radio' %>
+    <%= f.radio_button :status, "Up to date" %>
+    <%= f.label :status, "Up to date", :value => "Up to date", :class => 'radio' %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit 'Add Software', :class => 'save-button' %>
+  </div>
+<% end %>

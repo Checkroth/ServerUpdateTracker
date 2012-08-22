@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  serial: MyString
+  iosv: MyString
+  iosi: MyString
+  ipseg: MyString
+  gwaddr: MyString
+  wanip: MyString
+  mgmtip: MyString
+  notes: MyString
+  iosu: MyString
+
+two:
+  name: MyString
+  serial: MyString
+  iosv: MyString
+  iosi: MyString
+  ipseg: MyString
+  gwaddr: MyString
+  wanip: MyString
+  mgmtip: MyString
+  notes: MyString
+  iosu: MyString

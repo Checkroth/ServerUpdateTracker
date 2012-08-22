@@ -1,0 +1,41 @@
+<h1>Listing equipment</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Serial</th>
+    <th>Iosv</th>
+    <th>Iosi</th>
+    <th>Ipseg</th>
+    <th>Gwaddr</th>
+    <th>Wanip</th>
+    <th>Mgmtip</th>
+    <th>Notes</th>
+    <th>Iosu</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @equipment.each do |equipment| %>
+  <tr>
+    <td><%= equipment.name %></td>
+    <td><%= equipment.serial %></td>
+    <td><%= equipment.iosv %></td>
+    <td><%= equipment.iosi %></td>
+    <td><%= equipment.ipseg %></td>
+    <td><%= equipment.gwaddr %></td>
+    <td><%= equipment.wanip %></td>
+    <td><%= equipment.mgmtip %></td>
+    <td><%= equipment.notes %></td>
+    <td><%= equipment.iosu %></td>
+    <td><%= link_to 'Show', equipment %></td>
+    <td><%= link_to 'Edit', edit_equipment_path(equipment) %></td>
+    <td><%= link_to 'Destroy', equipment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Equipment', new_equipment_path %>

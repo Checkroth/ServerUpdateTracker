@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @server.name %></h1>
+
+<h2><%= @server.os %></h2>
+
+<h3>
+<%if @server.phys.include?("VM") %>
+	Virtual Machine
+<%else%>
+	Physical Server
+<%end%>
+</h3>
+
+<%=button_to 'Add Software', associate_server_path(@server), :class => 'add-button', :method => :get %>
+
+<div class="clear">
+</div>
+
+<div class="softwares-table">
+
+<div class="table-head">
+	<div class="cell software-cell-name">
+		Software Name
+	</div>
+	
+	<div class="cell software-cell-status">
+		Status
+	</div>
+
+	<div class="cell software-cell-version">
+		Version
+	</div>
+</div>
+
+<div class="clear">
+</div>
+
+<%# softwares = [@server.softwares] %>
+<%for software in @server.softwares %>  
+<%# for software in softwares %>
+	<%if software.status.include?("Out of date")%>
+		<div class="ood-software">
+	<%else%>
+		<div class="utd-software">
+	<%end%>
+	<div class="cell software-cell-name">
+		<%=software.name%>
+	</div>
+	<div class="cell software-cell-status">
+		<%=software.status%>
+	</div>
+	<div class="cell software-cell-version">
+		<%=software.version%>
+	</div><!---
+	<div class="cell software-cell-link">
+		<%=link_to "Show", server_software_path(@server, software)%>
+	</div>--->
+	<div class="cell software-cell-link">
+		<%=link_to "Edit", edit_server_software_path(@server, software)%>
+	</div>
+	<div class="cell software-cell-link">
+		<%=link_to 'Remove', disassociate_server_path(@server, software), :confirm => 'Are you sure?' %>
+	</div>
+	<div class="clear">
+	</div>
+
+	</div>
+<%end%>
+
+</div>
+
+<%= link_to 'Edit', edit_server_path(@server) %> | 
+<%= link_to 'Back', servers_path %>

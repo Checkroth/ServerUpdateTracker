@@ -1,0 +1,44 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a{
+color: #0092B2;
+&:visited {
+	color: #94C4F4; }
+&:hover {
+	color: #0092B2;
+background-color: #FFCA3D; } 
+}
+
+.home-link {
+letter-spacing:3px;
+font-size:15px;
+font-weight:bold;
+padding:190px 0;
+display:block;
+float:left;
+width:240px;
+margin:30px 10px;
+background-color:#F0F0F0;
+}
+
+.server-link {
+letter-spacing:3px;
+font-size:15px;
+margin:180px 0;
+display:block;
+}
+
+.link-container {
+float:left;
+height:400px;
+width:240px;
+margin:30px 10px;
+background-color:#F0F0F0;
+display:block;
+}
+
+.body-container {
+margin:0 10px;
+}

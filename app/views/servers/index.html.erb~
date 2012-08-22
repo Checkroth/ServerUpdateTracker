@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+</head>
+
+<body>
+
+<h1>Listing servers</h1>
+
+<%= form_tag servers_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<%end%>
+
+<div class="buttons-container">
+<%= button_to "Show All", servers_path, :method => 'get', :class => 'sort-button'%>
+<%= button_to "Out of date", ood_servers_path, :action => 'list_ood', :method => 'get', :class => 'sort-button' %>
+<%= button_to "Up to date", utd_servers_path, :method => 'get', :class => 'sort-button' %>
+</div>
+
+<div class="clear">
+</div>
+
+<div class="servers-table">
+<div class="table-head">
+	<div class="cell cell-name">
+		Name
+	</div>
+	<div class="cell cell-os">
+		OS
+	</div>
+	<div class="cell cell-phys">
+		Phys
+	</div>
+</div>
+
+<div class="clear">
+</div>
+
+<% for server in @servers %>
+  <% # This block of code determines if the server has any out of date software, and flags the listing red if any is found. %>
+  <% softwares = server.softwares.where(:status => "Out of date") %>
+  <% if not softwares.empty? %>
+  <div class="ood">
+  <% else %>
+  <div class="utd">
+  <%end%>
+  <% # End the check for out-of-date flag %>
+
+	  <div class="cell cell-name">
+	    <%= server.name %>
+	  </div>
+
+	  <div class="cell cell-os">
+	    <%= server.os %>
+	  </div>
+
+	  <div class="cell cell-phys">
+	    <%= server.phys %>
+	  </div>
+
+	  <div class="cell-link">
+	    <%= link_to 'Show', server %>
+	  </div>
+
+	  <div class="cell-link">
+	    <%= link_to 'Edit', edit_server_path(server) %>
+	  </div>
+
+	  <div class="cell-link">
+	    <%= link_to 'Destroy', server, :confirm => 'Are you sure?', :method => :delete %>
+	  </div>
+
+	  <div class="clear">
+	  </div>
+   </div>
+<% end %>
+</div>
+
+
+<br />
+<center>
+<%= link_to 'New Server', new_server_path %> | 
+<%= link_to 'Home', root_path %> |
+<%= link_to 'All Components', servers_path %>
+</center>
+
+</body>

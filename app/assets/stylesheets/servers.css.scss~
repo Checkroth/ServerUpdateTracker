@@ -1,0 +1,68 @@
+// Place all the styles related to the servers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ood {
+color: #B70000;
+#width:100%;
+margin:0, auto;
+padding:0;
+}
+
+.utd {
+font-color:black;
+margin:0, auto;
+padding:0;
+}
+
+.servers-table{
+background-color:#F0F0F0;
+margin:20px;
+padding:0 25px
+}
+
+.buttons-container{
+width:400px;
+margin:10px auto 25px;
+padding:0;
+}
+
+h1{
+font-size:xx-large;
+font-weight:bold;
+letter-spacing:3px;
+padding:3px 0 30px;
+color:#0092B2;
+text-shadow: 2px 2px;
+}
+
+h2{
+font-size:large;
+font-weight:bold;
+padding:2px 0 15px;
+color:#0092B2;
+}
+
+h3{
+font-size:medium;
+padding: 1px 0 10px;
+color:#0092B2;
+}
+
+.cell-name {
+width:200px;
+}
+
+.cell-phys {
+width:80px;
+}
+
+.cell-os {
+width:250px;
+}
+
+.cell-link {
+width:50px;
+padding:0 5px;
+float:left;
+}

@@ -1,0 +1,13 @@
+class ChangeStatusType < ActiveRecord::Migration
+  def up
+	change_table :servers do |t|
+		t.change :status, :string
+	end
+  end
+
+  def down
+	change_table :softwares do |t|
+		t.change :status, :integer
+	end
+  end
+end

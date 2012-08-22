@@ -1,0 +1,53 @@
+<p>
+  <b>Name:</b>
+  <%= software.name %>
+</p>
+ 
+<p>
+  <b>Version:</b>
+  <%= software.version %>
+</p>
+
+<p>
+  <b>Status: </b>
+  <%= software.status %>
+</p>
+
+<p>
+  <b> ID: </b>
+  <%= software.id %>
+</p>
+
+<p>
+  <b> Server ID: </b>
+  <%= software.server_id %>
+</p>
+
+<p>
+   <%= button_to 'Edit', edit_server_software_path(@server, software), :method => :get%>
+</p>
+
+<p>
+   <%= button_to 'Remove', [@server, software], :confirm => "Are you sure?", :method => :delete %>
+</p>
+<!--
+
+   <p>
+    <table>
+    <tr>
+    <td> Name </td>
+    <td> Version </td>
+    <td> Status </td>
+    </tr>
+<% @server.softwares.each do |software| %>
+    <tr>
+    <td> <%=software.name%> </td>
+    <td> <%=software.version%> </td>
+    <td> <%=software.status%> </td>
+    <td> <%= button_to('Remove', @software, :confirm => 'Are you sure?', :method => :delete) %></td>
+
+    </tr>
+<% end %>
+    </table>
+
+-->

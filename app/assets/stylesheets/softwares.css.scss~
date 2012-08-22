@@ -1,0 +1,41 @@
+// Place all the styles related to the Softwares controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.add-button {
+width:300px;
+margin:10px auto;
+height:30px;
+color:#0092B2;
+}
+
+.softwares-table {
+background-color:#F0F0F0;
+margin:20px;
+padding:0 25px
+}
+
+.software-cell-name {
+width:200px;
+}
+
+.software-cell-status {
+width:130px;
+}
+
+.software-cell-version {
+width: 150px;
+}
+
+.software-cell-link {
+width:50px;
+padding:0 5px;
+float:left;
+}
+
+.ood-software {
+color:#B70000;
+}
+
+.utd-software {
+color:black;
+}
