@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+</head>
+
+<body>
+
+<h1>Listing Components</h1>
+
+<%= form_tag servers_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<%end%>
+
+<div class="buttons-container">
+<%= button_to "Show All", softwares_path, :method => 'get', :class => 'sort-button'%>
+<%= button_to "Out of date", ood_softwares_path, :action => 'list_ood', :method => 'get', :class => 'sort-button' %>
+<%= button_to "Up to date", utd_softwares_path, :method => 'get', :class => 'sort-button' %>
+</div>
+
+<div class="clear">
+</div>
+
+<div class="softwares-table">
+<div class="table-head">
+	<div class="cell software-cell-name">
+		Name
+	</div>
+	<div class="cell software-cell-status">
+		Status
+	</div>
+	<div class="cell software-cell-version">
+		Version
+	</div>
+</div>
+
+<div class="clear">
+</div>
+
+<% for software in @softwares %>
+  <% if software.status.include?("Out of date") %>
+	<div class="ood">	  
+		  <div class="cell software-cell-name">
+		    <%= software.name %>
+		  </div>
+
+		  <div class="cell software-cell-status">
+		    <%= software.status %>
+		  </div>
+
+		  <div class="cell software-cell-version">
+		    <%= software.version %>
+		  </div>
+
+		  <div class="cell-link">
+		    <%= link_to 'Show', software %>
+		  </div>
+
+		  <div class="cell-link">
+		    <%= link_to 'Edit', edit_software_path(software) %>
+		  </div>
+
+		  <div class="cell-link">
+		    <%= link_to 'Destroy', software, :confirm => 'Are you sure?', :method => :delete %>
+		  </div>
+
+		  <div class="clear">
+		  </div>
+	</div>
+  <% end %>
+<% end %>
+</div>
+
+
+<br />
+
+<%= link_to 'New Server', new_server_path %>
+<%= link_to 'Home', root_path %>
+
+</body>
