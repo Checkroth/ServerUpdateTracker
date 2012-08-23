@@ -19,34 +19,36 @@
 <div class="clear">
 </div>
 
-<%for software in @softwares %>  
-	<%if software.status.include?("Out of date")%>
-		<div class="ood-software">
-	<%else%>
-		<div class="utd-software">
-	<%end%>
-	<div class="cell software-cell-name">
-		<%=software.name%>
-	</div>
-	<div class="cell software-cell-status">
-		<%=software.status%>
-	</div>
-	<div class="cell software-cell-version">
-		<%=software.version%>
-	</div>
-	<div class="cell software-cell-link">
-		<%=link_to 'Add', addassociation_server_path(@server, software) %>
-	</div>
-	<div class="cell software-cell-link">
-		<%=link_to "Edit", edit_server_software_path(@server, software)%>
-	</div>
-	<div class="cell software-cell-link">
-		<%=link_to 'Delete', server_software_path(@server, software), :confirm => 'Are you sure?', :method => :delete %>
-	</div>
-	<div class="clear">
-	</div>
+<%for software in @softwares %>
+	<%if not @server.softwares.include?(software) %>
+		<%if software.status.include?("Out of date")%>
+			<div class="ood-software">
+		<%else%>
+			<div class="utd-software">
+		<%end%>
+		<div class="cell software-cell-name">
+			<%=software.name%>
+		</div>
+		<div class="cell software-cell-status">
+			<%=software.status%>
+		</div>
+		<div class="cell software-cell-version">
+			<%=software.version%>
+		</div>
+		<div class="cell software-cell-link">
+			<%=link_to 'Add', addassociation_server_path(@server, software) %>
+		</div>
+		<div class="cell software-cell-link">
+			<%=link_to "Edit", edit_server_software_path(@server, software)%>
+		</div>
+		<div class="cell software-cell-link">
+			<%=link_to 'Delete', server_software_path(@server, software), :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+		<div class="clear">
+		</div>
 
-	</div>
+		</div>
+	<%end%>
 <%end%>
 </div>
 
