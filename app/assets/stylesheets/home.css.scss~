@@ -14,10 +14,11 @@ background-color: #FFCA3D; }
 .home-link {
 letter-spacing:3px;
 font-size:15px;
+font-weight:bold;
 padding:190px 0;
 display:block;
 float:left;
-width:240px;
+width:365px;
 margin:30px 10px;
 background-color:#F0F0F0;
 }
