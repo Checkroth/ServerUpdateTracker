@@ -12,6 +12,18 @@
 <h1>Philadelphia Housing Authority</h1>
 </div>
 
+<div class="clear">
+</div>
+
+<div class="header-button-container" >
+<%= button_to "Servers", servers_path, :method => 'get', :class => 'header-button'%>
+<%= button_to "Home", root_path, :method => 'get', :class => 'header-button'%>
+<%= button_to "Components", softwares_path, :method => 'get', :class => 'header-button'%>
+</div>
+
+<div class="clear">
+</div>
+
 <div class="container">
 
 <%= yield %>

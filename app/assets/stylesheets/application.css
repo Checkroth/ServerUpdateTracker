@@ -25,12 +25,29 @@ margin:0;
 }
 
 .header {
-width:800px;
+width:810px;
 height:25px;
 text-align:center;
 margin:auto;
 background-color:#FFCA3D;
 padding:3px;
+}
+
+.header-button {
+width:229px;
+height:25px;
+text-align:center;
+margin:5px 20px;
+float:left;
+}
+
+.header-button-container {
+width:809px;
+margin:auto;
+background-color:#FFCA3D;
+overflow:auto;
+//border-left:1px solid black;
+//border-right:1px solid black;
 }
 
 .container {
