@@ -100,3 +100,15 @@ color:#0092B2;
 margin:0 auto;
 height:25px;
 }
+
+.bottom-button{
+letter-spacing:3px;
+font-size:15px;
+font-weight:bold;
+display:block;
+float:left;
+width:800px;
+height:20px;
+margin:0;
+background-color:#F0F0F0;
+}

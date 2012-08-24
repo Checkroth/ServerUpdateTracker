@@ -65,7 +65,6 @@
    </div>
 <% end %>
 </div>
- 
-<%= link_to 'Edit Component', edit_software_path(@software) %> |
-<%= link_to 'Home', root_path %> |
-<%= link_to 'All Componenets', softwares_path %> 
+
+<%= link_to "Edit Component", edit_software_path(@software), :class => "bottom-button" %>
+<%= link_to "Back to All Components", softwares_path, :class => "bottom-button" %>
