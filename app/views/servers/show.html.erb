@@ -17,6 +17,9 @@
 <div class="clear">
 </div>
 
+<%= link_to "Edit Server", edit_server_path(@server), :class => "bottom-button" %>
+<%= link_to "Back to All Servers", servers_path, :class => "bottom-button" %>
+
 <div class="softwares-table">
 
 <div class="table-head">
@@ -35,6 +38,7 @@
 
 <div class="clear">
 </div>
+
 
 <%# softwares = [@server.softwares] %>
 <%for software in @server.softwares %>  
@@ -68,5 +72,4 @@
 	</div>
 <%end%>
 </div>
-<%= link_to "Edit Server", edit_server_path(@server), :class => "bottom-button" %>
-<%= link_to "Back to All Servers", servers_path, :class => "bottom-button" %>
+

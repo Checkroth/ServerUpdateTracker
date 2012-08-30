@@ -11,10 +11,14 @@
  
 <h3>Version <%= @software.version %></h3> 
 
+
+<%= link_to "Edit Component", edit_software_path(@software), :class => "bottom-button" %>
+<%= link_to "Back to All Components", softwares_path, :class => "bottom-button" %>
+
 <div class="servers-table">
 <div class="table-head">
 	<div class="cell cell-name">
-		Name
+		Server Name
 	</div>
 	<div class="cell cell-os">
 		OS
@@ -66,5 +70,3 @@
 <% end %>
 </div>
 
-<%= link_to "Edit Component", edit_software_path(@software), :class => "bottom-button" %>
-<%= link_to "Back to All Components", softwares_path, :class => "bottom-button" %>

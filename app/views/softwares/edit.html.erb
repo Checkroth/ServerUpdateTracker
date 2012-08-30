@@ -1,4 +1,4 @@
-<h1>Editing Software</h1>
+<h1>Editing Component</h1>
 
 <%= form_for ([:server, @software]) do |f| %>
   <div class="field">
@@ -19,8 +19,8 @@
     <%= f.label :status, "Up to date", :value => "Up to date", :class => 'radio' %><br />
   </div>
   <div class="actions">
-    <%= f.submit 'Update Software', :class => 'save-button' %>
+    <%= f.submit 'Update Component', :class => 'save-button' %>
   </div>
 <% end %>
 
-<%= link_to 'back', @server %>
+<%= link_to 'back', software_path(@software) %>

@@ -106,9 +106,9 @@ letter-spacing:3px;
 font-size:15px;
 font-weight:bold;
 display:block;
-float:left;
+//float:left;
+margin:0 auto;
 width:800px;
 height:20px;
-margin:0;
 background-color:#F0F0F0;
 }
