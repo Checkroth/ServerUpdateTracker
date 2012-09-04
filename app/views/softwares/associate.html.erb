@@ -1,0 +1,56 @@
+<h2>Add Server to <%= @software.name %></h2>
+
+<div class="servers-table">
+
+<div class="table-head">
+	<div class="cell cell-name">
+		Server Name
+	</div>
+	
+	<div class="cell cell-os">
+		OS
+	</div>
+
+	<div class="cell cell-phys">
+		Phys
+	</div>
+</div>
+
+<div class="clear">
+</div>
+
+<%for server in @servers %>
+	<%if not @software.servers.include?(server) %>
+		<%if @software.status.include?("Out of date")%>
+			<div class="ood">
+		<%else%>
+			<div class="utd">
+		<%end%>
+		<div class="cell cell-name">
+			<%=server.name%>
+		</div>
+		<div class="cell cell-os">
+			<%=server.os%>
+		</div>
+		<div class="cell cell-phys">
+			<%=server.phys%>
+		</div>
+		<div class="cell link">
+			<%=link_to 'Add', addassociation_software_path(@software, server) %>
+		</div>
+		<div class="cell cell-link">
+			<%=link_to "Edit", edit_software_server_path(@software, server)%>
+		</div>
+		<div class="cell cell-link">
+			<%=link_to 'Delete', software_server_path(@software, server), :confirm => 'Are you sure?', :method => :delete %>
+		</div>
+		<div class="clear">
+		</div>
+
+		</div>
+	<%end%>
+<%end%>
+</div>
+
+<%= link_to 'List Components', softwares_path %> |
+<%= link_to 'Back to Component', @software %>

@@ -1,7 +1,7 @@
 class SoftwaresController < ApplicationController
   http_basic_authenticate_with :name => "Administrator", :password => "PHARails"
 
-   before_filter :get_software, :only => [:show, :edit, :update, :destroy]
+   before_filter :get_software, :only => [:show, :edit, :update, :destroy, :associate, :addassociation, :disassociate]
    before_filter :get_softwares, :only => [:list_ood, :list_utd]
 
   def get_software
@@ -62,7 +62,7 @@ class SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.update_attributes(params[:software])
-        format.html { redirect_to @software, :notice => 'Software was successfully updated.' }
+        format.html { redirect_to @software, :notice => 'Componenet was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }
@@ -91,6 +91,27 @@ class SoftwaresController < ApplicationController
       format.html
       format.json { render :json => @software }
     end
+  end
+
+  def associate
+    #@server.softwares << software
+    @servers = Server.find(:all)
+    respond_to do |format|
+      format.html
+      format.json { render :json => @server }
+    end
+  end
+
+  def addassociation
+    @server = Server.find(params[:format])
+    @software.servers << @server
+    redirect_to @software
+  end
+
+  def disassociate
+    @server = Server.find(params[:format])
+    @software.servers.delete(@server)
+    redirect_to @software
   end
 
 end

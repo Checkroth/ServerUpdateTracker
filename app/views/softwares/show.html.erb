@@ -11,6 +11,11 @@
  
 <h3>Version <%= @software.version %></h3> 
 
+<%=button_to 'Add Server', associate_software_path(@software), :class => 'add-button', :method => :get %>
+
+<div class="clear">
+</div>
+
 
 <%= link_to "Edit Component", edit_software_path(@software), :class => "bottom-button" %>
 <%= link_to "Back to All Components", softwares_path, :class => "bottom-button" %>
@@ -61,7 +66,7 @@
 	  </div>
 
 	  <div class="cell-link">
-	    <%= link_to 'Destroy', server, :confirm => 'Are you sure?', :method => :delete %>
+		<%=link_to 'Remove', disassociate_software_path(@software, server), :confirm => 'Are you sure?' %>
 	  </div>
 
 	  <div class="clear">

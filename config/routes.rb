@@ -17,7 +17,13 @@ PHA::Application.routes.draw do
     get :disassociate, :on => :member
     resources :softwares 
   end
-  resources :softwares
+
+  resources :softwares do
+    get :associate, :on =>  :member
+    get :addassociation, :on => :member
+    get :disassociate, :on => :member
+    resources :servers
+  end
 
   get "home/index"
   #match ':servers/:server_id/:softwares/:id/edit' => 'softwares#edit'
