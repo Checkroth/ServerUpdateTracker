@@ -21,7 +21,8 @@
 
 <%for server in @servers %>
 	<%if not @software.servers.include?(server) %>
-		<%if @software.status.include?("Out of date")%>
+		<% softwares = server.softwares.where(:status => "Out of date") %>
+		<%if not softwares.empty?%>
 			<div class="ood">
 		<%else%>
 			<div class="utd">
